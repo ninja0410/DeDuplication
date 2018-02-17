@@ -6,11 +6,7 @@ train
 library(dplyr)
 train2 <- train
 
-train1 <- train[!duplicated(train[,1:4]),]
- 
-my_solution <- data.frame(ln = train1$ln, dob = train1$dob, gn = train1$gn , fn = train1$fn )
-
-train4 <- my_solution
+train4 <- train
 train4$ln_1 <- sapply(strsplit(as.character(train4$ln),' '), "[", 1)
 train4$ln_2 <- sapply(strsplit(as.character(train4$ln),' '), "[", 2)
 train4
