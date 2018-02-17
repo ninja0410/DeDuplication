@@ -10,15 +10,7 @@ train1 <- train[!duplicated(train[,1:4]),]
  
 my_solution <- data.frame(ln = train1$ln, dob = train1$dob, gn = train1$gn , fn = train1$fn )
 
-train2$fullNAme <- paste(train2$fn, train2$ln) 
-train2$fullNameDob <- paste(train2$fullNAme, train2$dob)
-train2$fullNameDobSex <- paste(train2$fullNameDob, train2$gn)
-train3 <- train2[!duplicated(train2[,7]),]
-
-my_solution_two <- data.frame(ln = train3$ln, dob = train3$dob, gn = train3$gn , fn = train3$fn )
-
-train3
-train4 <- my_solution_two
+train4 <- my_solution
 train4$ln_1 <- sapply(strsplit(as.character(train4$ln),' '), "[", 1)
 train4$ln_2 <- sapply(strsplit(as.character(train4$ln),' '), "[", 2)
 train4
